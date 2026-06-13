@@ -10,7 +10,7 @@
 
 body {
   font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #0f1c3b, #032760);
+  background: linear-gradient(135deg, #070d1b, #1e293b);
   color: white;
 }
 
@@ -22,6 +22,7 @@ body {
   align-items: center;
   padding: 25px 80px;
   background: rgba(255, 255, 255, 0.08);
+
 }
 
 .navbar h2 {
