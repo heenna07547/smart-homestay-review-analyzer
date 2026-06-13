@@ -114,7 +114,7 @@ smart-homestay-review-analyzer/
 
 Setup and installation instructions will be added in future development phases.
 
-**Setup — Coming Soon**
+# Updated for fix commits
 
 ---
 
