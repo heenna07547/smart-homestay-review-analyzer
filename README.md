@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Smart Homestay Review Analyzer
 
 ## Overview
@@ -119,10 +118,5 @@ Setup and installation instructions will be added in future development phases.
 
 ---
 
-## Status
-
-🚧 Project currently in initial development phase as part of the TBI-GEU Internship Program.
-=======
-# smart-homestay-review-analyzer
- A web application that helps homestay owners understand guest reviews using AI and improve their services based on customer feedback.
->>>>>>> 6280afe4c17e94827eca0238b16964465c678119
+## Project Status
+🚧 This project is currently in the initial development phase
