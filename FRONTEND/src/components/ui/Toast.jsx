@@ -1,0 +1,14 @@
+/**
+ * Props:
+ * message: string
+ */
+
+function Toast({ message }) {
+  return (
+    <div className="toast">
+      {message}
+    </div>
+  );
+}
+
+export default Toast;

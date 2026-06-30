@@ -1,0 +1,17 @@
+$kind: http-request
+description: Creates a new review.
+url: http://localhost:5000/api/reviews
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "guestName": "Rohan Iyer",
+      "hotelName": "Lakeview Cottage",
+      "review": "Peaceful location with a great view of the lake. Would visit again.",
+      "rating": 4
+    }
+examples: ./.resources/Create Review.resources/examples
+order: 3000

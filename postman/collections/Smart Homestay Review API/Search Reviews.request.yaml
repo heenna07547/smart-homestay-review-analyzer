@@ -1,0 +1,8 @@
+$kind: http-request
+description: Searches reviews by hotel name (case-insensitive partial match).
+url: http://localhost:5000/api/reviews/search?hotelName=Sunrise
+method: GET
+queryParams:
+  hotelName: Sunrise
+examples: ./.resources/Search Reviews.resources/examples
+order: 6000

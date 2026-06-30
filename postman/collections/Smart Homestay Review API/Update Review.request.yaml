@@ -1,0 +1,15 @@
+$kind: http-request
+description: Updates an existing review by its _id.
+url: http://localhost:5000/api/reviews/665f1a2b3c4d5e6f78901234
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "rating": 5,
+      "review": "Updated review: even better on our second visit!"
+    }
+examples: ./.resources/Update Review.resources/examples
+order: 4000

@@ -1,18 +1,24 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 
-function Login() {
+function Signup() {
   return (
     <Layout maxWidth="400px">
       <h1 className="page-title">
-        Login
+        Create Account
       </h1>
 
       <p className="page-copy login-copy">
-        Sign in to access your personalized review dashboard and saved comparisons.
+        Create your profile to save comparisons and track homestay review insights.
       </p>
 
       <form className="auth-form">
+        <input
+          type="text"
+          placeholder="Full name"
+          className="auth-input"
+        />
+
         <input
           type="email"
           placeholder="Email"
@@ -29,15 +35,15 @@ function Login() {
           type="submit"
           className="auth-submit"
         >
-          Sign In
+          Create Account
         </button>
       </form>
 
       <p className="auth-switch">
-        Don't have an account? <Link to="/signup">Create account</Link>
+        Already have an account? <Link to="/login">Sign in</Link>
       </p>
     </Layout>
   );
 }
 
-export default Login;
+export default Signup;

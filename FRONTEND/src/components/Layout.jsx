@@ -1,0 +1,26 @@
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+
+function Layout({ children, maxWidth = "800px" }) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <Navbar />
+
+      <main
+        style={{
+          flex: 1,
+          padding: "3rem 2rem",
+          maxWidth,
+          margin: "0 auto",
+          width: "100%",
+        }}
+      >
+        {children}
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
+
+export default Layout;

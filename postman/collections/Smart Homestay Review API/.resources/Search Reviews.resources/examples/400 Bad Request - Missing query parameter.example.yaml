@@ -1,0 +1,17 @@
+$kind: http-example
+request:
+  url: http://localhost:5000/api/reviews/search
+  method: GET
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Content-Type: application/json; charset=utf-8
+  body:
+    type: json
+    content: |-
+      {
+        "success": false,
+        "message": "Query parameter 'hotelName' is required"
+      }
+order: 2000

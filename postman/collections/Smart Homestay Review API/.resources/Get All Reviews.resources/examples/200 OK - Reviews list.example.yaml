@@ -1,0 +1,38 @@
+$kind: http-example
+request:
+  url: http://localhost:5000/api/reviews
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json; charset=utf-8
+  body:
+    type: json
+    content: |-
+      {
+        "success": true,
+        "message": "Get all reviews",
+        "count": 2,
+        "data": [
+          {
+            "_id": "665f1a2b3c4d5e6f78901234",
+            "guestName": "Aarav Mehta",
+            "hotelName": "Sunrise Homestay",
+            "review": "Lovely stay, the host was very welcoming and the rooms were clean.",
+            "rating": 5,
+            "createdAt": "2026-06-20T10:15:00.000Z",
+            "updatedAt": "2026-06-20T10:15:00.000Z"
+          },
+          {
+            "_id": "665f1a2b3c4d5e6f78901235",
+            "guestName": "Priya Sharma",
+            "hotelName": "Hilltop Retreat",
+            "review": "Good location but the WiFi was spotty.",
+            "rating": 3,
+            "createdAt": "2026-06-21T09:00:00.000Z",
+            "updatedAt": "2026-06-21T09:00:00.000Z"
+          }
+        ]
+      }
+order: 1000

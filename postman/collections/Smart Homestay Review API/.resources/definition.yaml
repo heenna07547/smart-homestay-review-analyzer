@@ -1,0 +1,2 @@
+$kind: collection
+description: REST API collection for the Smart Homestay Review Analyzer backend. Covers full CRUD on the /api/reviews resource plus a search endpoint.
