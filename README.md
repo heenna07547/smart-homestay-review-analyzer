@@ -86,34 +86,34 @@ The project is currently configured for local development.
 ---
 
 ## Project Structure
-
+```plaintext
 HomestayReviewAnalyzer/
 │
-├── BACKEND/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── config/
-│   ├── server.js
-│   ├── package.json
+├── BACKEND/                # Node.js + Express server
+│   ├── controllers/        # Business logic for handling requests
+│   ├── middleware/         # Authentication, logging, error handling
+│   ├── models/             # Database schemas (e.g., MongoDB/Mongoose)
+│   ├── routes/             # API endpoints
+│   ├── config/             # Environment and DB configuration
+│   ├── server.js           # Entry point for backend server
+│   ├── package.json        # Backend dependencies
 │   └── ...
 │
-├── FRONTEND/
-│   ├── public/
+├── FRONTEND/               # React-based client
+│   ├── public/             # Static assets
 │   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── package.json
+│   │   ├── assets/         # Images, icons, styles
+│   │   ├── components/     # Reusable UI components
+│   │   ├── pages/          # Page-level views
+│   │   ├── services/       # API calls and utilities
+│   │   ├── App.jsx         # Root component
+│   │   └── main.jsx        # React entry point
+│   ├── package.json        # Frontend dependencies
 │   └── ...
 │
-├── README.md
-└── .gitignore
-
+├── README.md               # Project documentation
+└── .gitignore              # Ignored files for Git
+```
 ---
 
 ## Future Enhancements
