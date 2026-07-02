@@ -18,9 +18,9 @@ This application aims to simplify the review analysis process by providing autom
 
 ## Features
 
-### Review Collection
+### Review Analysis
 
-Store and manage guest reviews from multiple sources in a centralized platform.
+Get deep insights from thousands of homestay reviews using AI-powered sentiment analysis.
 
 ### Sentiment Analysis
 
@@ -81,21 +81,37 @@ Using OpenAI enables accurate language understanding and improves the quality of
 
 ### Deployment
 
-* Vercel (Frontend)
-* Render (Backend)
+The project is currently configured for local development.
 
 ---
 
 ## Project Structure
 
-smart-homestay-review-analyzer/
-
-├── frontend/
-
-├── backend/
-
+HomestayReviewAnalyzer/
+│
+├── BACKEND/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── config/
+│   ├── server.js
+│   ├── package.json
+│   └── ...
+│
+├── FRONTEND/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   └── ...
+│
 ├── README.md
-
 └── .gitignore
 
 ---
