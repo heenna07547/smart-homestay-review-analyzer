@@ -129,7 +129,7 @@ This project uses **MongoDB Atlas** as the database and **Mongoose** as the ODM.
 
 ## Database Schema
 
-![Database Schema](images/schema.png)
+![Database Schema](images/image.png)
 
 ## Set Up the Database
 
