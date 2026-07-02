@@ -10,21 +10,23 @@ function Home() {
       <Navbar />
       <Hero />
       <section className="card-grid">
-        <Card 
-          title="Review Analysis"
-          description="Get deep insights from thousands of homestay reviews using AI-powered sentiment analysis."
-          image="https://picsum.photos/seed/review/300/200"
-        />
-        <Card 
-          title="Compare Homestays"
-          description="Easily compare ratings, amenities, and guest feedback across different properties."
-          image="https://picsum.photos/seed/compare_homestay/300/200"
-        />
-        <Card 
-          title="Trending Destinations"
-          description="Discover top-rated homestays based on real traveler reviews and ratings."
-          image="https://picsum.photos/seed/destination/300/200"
-        />
+       <Card
+  title="Review Analysis"
+  description="Get deep insights from thousands of homestay reviews using AI-powered sentiment analysis."
+  image="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600"
+/>
+
+<Card
+  title="Compare Homestays"
+  description="Compare ratings, amenities and guest feedback across multiple homestays."
+  image="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600"
+/>
+
+<Card
+  title="Trending Destinations"
+  description="Discover the highest-rated stays recommended by real travellers."
+  image="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600"
+/>
       </section>
       <Footer />
     </div>

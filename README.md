@@ -115,25 +115,46 @@ smart-homestay-review-analyzer/
 Setup and installation instructions will be added in future development phases.
 
 # Updated for fix commits
-# Backend Setup
 
+# Database
+
+This project uses **MongoDB Atlas** as the database and **Mongoose** as the ODM.
+
+## Why MongoDB?
+
+- NoSQL document database
+- Easy integration with Node.js
+- Scalable cloud database
+- Perfect for storing hotel reviews
+
+## Database Schema
+
+![Database Schema](images/schema.png)
+
+## Set Up the Database
+
+1. Clone the repository
+
+2. Install dependencies
+
+```bash
+npm install
+
+# Backend Setup
 ## Install
 
 npm install
 
 ## Create .env
-
 PORT=5000
 MONGO_URI=mongodb://127.0.0.1:27017/smart_homestay
 
 ## Start
-
 npm run dev
 
 Backend runs at:
-
 http://localhost:5000
 ---
 
 ## Project Status
-🚧 This project is currently in the initial development phase
+

@@ -3,16 +3,23 @@ import Footer from "./Footer";
 
 function Layout({ children, maxWidth = "800px" }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-      <Navbar />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
+      <Navbar/>
 
       <main
         style={{
           flex: 1,
-          padding: "3rem 2rem",
+          padding: "7rem 2rem 3rem",
           maxWidth,
           margin: "0 auto",
           width: "100%",
+          boxSizing: "border-box",
         }}
       >
         {children}

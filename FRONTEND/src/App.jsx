@@ -25,7 +25,15 @@ function App() {
         </button>
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                darkMode={darkMode}
+                toggleTheme={() => setDarkMode(!darkMode)}
+              />
+            }
+          />
           <Route path="/about" element={<About />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />

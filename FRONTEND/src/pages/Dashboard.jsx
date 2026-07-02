@@ -38,7 +38,14 @@ function Dashboard() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Navbar />
-      <main style={{ flex: 1, padding: '3rem 2rem', maxWidth: '900px', margin: '0 auto', width: '100%' }}>
+      <main
+  style={{
+    flex: 1,
+    padding: '7rem 2rem 3rem',
+    maxWidth: '800px',
+    margin: '0 auto'
+  }}
+>
         <h1 style={{ fontSize: '2.5rem', color: '#2c3e50', marginBottom: '1rem' }}>Dashboard</h1>
         <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#555', marginBottom: '2rem' }}>
           Live guest reviews pulled from the backend API.
