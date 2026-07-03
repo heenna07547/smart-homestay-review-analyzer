@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const reviewRoutes = require("./routes/reviewRoutes");
+const activityRoutes = require("./routes/activityRoutes");
 const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
@@ -17,6 +18,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.log(err));
 
 app.use("/api/reviews", reviewRoutes);
+app.use("/api/activity", activityRoutes);
 
 app.get("/", (req, res) => {
   res.json({

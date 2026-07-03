@@ -1,4 +1,5 @@
 const Review = require("../models/reviewModel");
+const Activity = require("../models/Activity");
 exports.getReviews = async (req, res) => {
   try {
     const reviews = await Review.find();
@@ -42,6 +43,13 @@ exports.getReview = async (req, res) => {
 exports.createReview = async (req, res) => {
   try {
     const review = await Review.create(req.body);
+    await Activity.create({
+      action: "CREATE",
+      guestName: review.guestName,
+      hotelName: review.hotelName,
+      rating: review.rating,
+      review: review.review,
+    });
 
     res.status(201).json({
       success: true,
@@ -54,6 +62,7 @@ exports.createReview = async (req, res) => {
       message: error.message,
     });
   }
+  
 };
 
 exports.updateReview = async (req, res) => {
@@ -74,6 +83,15 @@ exports.updateReview = async (req, res) => {
       });
     }
 
+    // Save activity
+    await Activity.create({
+      action: "UPDATE",
+      guestName: review.guestName,
+      hotelName: review.hotelName,
+      rating: review.rating,
+      review: review.review,
+    });
+
     res.status(200).json({
       success: true,
       message: "Review updated",
@@ -90,6 +108,13 @@ exports.updateReview = async (req, res) => {
 exports.deleteReview = async (req, res) => {
   try {
     const review = await Review.findByIdAndDelete(req.params.id);
+    await Activity.create({
+      action: "DELETE",
+      guestName: review.guestName,
+      hotelName: review.hotelName,
+      rating: review.rating,
+      review: review.review,
+    });
 
     if (!review) {
       return res.status(404).json({
