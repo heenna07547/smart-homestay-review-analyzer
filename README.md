@@ -18,9 +18,9 @@ This application aims to simplify the review analysis process by providing autom
 
 ## Features
 
-### Review Collection
+### Review Analysis
 
-Store and manage guest reviews from multiple sources in a centralized platform.
+Get deep insights from thousands of homestay reviews using AI-powered sentiment analysis.
 
 ### Sentiment Analysis
 
@@ -81,23 +81,39 @@ Using OpenAI enables accurate language understanding and improves the quality of
 
 ### Deployment
 
-* Vercel (Frontend)
-* Render (Backend)
+The project is currently configured for local development.
 
 ---
 
 ## Project Structure
-
-smart-homestay-review-analyzer/
-
-├── frontend/
-
-├── backend/
-
-├── README.md
-
-└── .gitignore
-
+```plaintext
+HomestayReviewAnalyzer/
+│
+├── BACKEND/                # Node.js + Express server
+│   ├── controllers/        # Business logic for handling requests
+│   ├── middleware/         # Authentication, logging, error handling
+│   ├── models/             # Database schemas (e.g., MongoDB/Mongoose)
+│   ├── routes/             # API endpoints
+│   ├── config/             # Environment and DB configuration
+│   ├── server.js           # Entry point for backend server
+│   ├── package.json        # Backend dependencies
+│   └── ...
+│
+├── FRONTEND/               # React-based client
+│   ├── public/             # Static assets
+│   ├── src/
+│   │   ├── assets/         # Images, icons, styles
+│   │   ├── components/     # Reusable UI components
+│   │   ├── pages/          # Page-level views
+│   │   ├── services/       # API calls and utilities
+│   │   ├── App.jsx         # Root component
+│   │   └── main.jsx        # React entry point
+│   ├── package.json        # Frontend dependencies
+│   └── ...
+│
+├── README.md               # Project documentation
+└── .gitignore              # Ignored files for Git
+```
 ---
 
 ## Future Enhancements
@@ -129,7 +145,7 @@ This project uses **MongoDB Atlas** as the database and **Mongoose** as the ODM.
 
 ## Database Schema
 
-![Database Schema](images/schema.png)
+![Database Schema](images/image.png)
 
 ## Set Up the Database
 
