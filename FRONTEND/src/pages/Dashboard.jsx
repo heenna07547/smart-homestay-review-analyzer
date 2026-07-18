@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 const API_BASE_URL = 'http://localhost:5000/api/reviews'
+const token = localStorage.getItem("token");
 
 function Dashboard() {
   const [reviews, setReviews] = useState([])
@@ -22,8 +23,11 @@ function Dashboard() {
     const fetchReviews = async () => {
       try {
         setLoading(true)
-        const response = await fetch(API_BASE_URL)
-
+        const response = await fetch(API_BASE_URL, {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+});
         if (!response.ok) {
           throw new Error(`Request failed with status ${response.status}`)
         }
@@ -48,17 +52,11 @@ function Dashboard() {
 
   try {
     const response = await fetch(API_BASE_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        guestName,
-        hotelName,
-        rating: Number(rating),
-        review: reviewText,
-      }),
-    })
+    headers: {
+  "Content-Type": "application/json",
+  Authorization: `Bearer ${token}`,
+},
+});
 
     const result = await response.json()
 
@@ -89,8 +87,11 @@ function Dashboard() {
 
     try {
       const response = await fetch(`${API_BASE_URL}/${id}`, {
-        method: "DELETE",
-      })
+  method: "DELETE",
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+});
 
       if (!response.ok) {
         throw new Error("Failed to delete review")
@@ -117,6 +118,7 @@ function Dashboard() {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         guestName: editGuestName,

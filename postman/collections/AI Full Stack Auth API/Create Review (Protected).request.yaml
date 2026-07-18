@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseURL}}/api/reviews"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: text
+  content: |-
+    {
+      "guestName": "Rahul",
+      "hotelName": "Mountain View Resort",
+      "review": "Excellent stay and great service",
+      "rating": 5
+    }
+order: 4000

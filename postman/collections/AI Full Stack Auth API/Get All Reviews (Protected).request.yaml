@@ -1,0 +1,6 @@
+$kind: http-request
+url: "{{baseURL}}/api/reviews"
+method: GET
+headers:
+  Authorization: Bearer {{token}}
+order: 3000

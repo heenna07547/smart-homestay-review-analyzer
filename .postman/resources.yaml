@@ -6,4 +6,5 @@ workspace:
 cloudResources:
   collections:
     ../postman/collections/New Collection: 56228131-170881fd-99a1-4317-800c-1929ec73e62f
-    ..\postman\collections\Smart Homestay Review API: e010c918-1cb8-4f1f-86b8-61a70ee63143
+    ../postman/collections/Smart Homestay Review API: e010c918-1cb8-4f1f-86b8-61a70ee63143
+    ../postman/collections/AI Full Stack Auth API: 089fdaf8-dd7a-4e09-9f9c-ac72e6d236a1

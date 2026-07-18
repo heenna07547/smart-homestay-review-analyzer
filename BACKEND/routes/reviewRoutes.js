@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+const authMiddleware = require("../middleware/authMiddleware");
+
 const {
     getReviews,
     getReview,
@@ -10,16 +12,14 @@ const {
     searchReviews,
 } = require("../controllers/reviewController");
 
-router.get("/", getReviews);
-
+// Public Routes
 router.get("/search", searchReviews);
 
-router.get("/:id", getReview);
-
-router.post("/", createReview);
-
-router.put("/:id", updateReview);
-
-router.delete("/:id", deleteReview);
+// Protected Routes
+router.get("/", authMiddleware, getReviews);
+router.get("/:id", authMiddleware, getReview);
+router.post("/", authMiddleware, createReview);
+router.put("/:id", authMiddleware, updateReview);
+router.delete("/:id", authMiddleware, deleteReview);
 
 module.exports = router;

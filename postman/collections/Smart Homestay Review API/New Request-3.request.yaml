@@ -1,0 +1,28 @@
+$kind: http-request
+name: New Request
+url: http://localhost:5000/api/auth/login
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"email\": \"heenadanu@gmail.com\",\r
+
+    \    \"password\": \"heena@2006\"\r
+
+    }"
+auth:
+  type: noauth
+scripts:
+  - type: afterResponse
+    code: "const json = pm.response.json();\r
+
+      \r
+
+      pm.environment.set(\"token\", json.token);\r
+
+      \r
+
+      console.log(\"Token saved:\", json.token);"
+    language: text/javascript
+order: 4503593928204736
