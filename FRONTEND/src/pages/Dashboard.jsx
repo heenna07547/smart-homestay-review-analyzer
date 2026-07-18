@@ -18,6 +18,9 @@ function Dashboard() {
   const [editHotelName, setEditHotelName] = useState("")
   const [editRating, setEditRating] = useState(5)
   const [editReview, setEditReview] = useState("")
+  const [summary, setSummary] = useState("")
+const [aiLoading, setAiLoading] = useState(false)
+const [aiError, setAiError] = useState("")
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -48,36 +51,44 @@ function Dashboard() {
 
   const renderRatingStars = (rating) => '★'.repeat(rating) + '☆'.repeat(5 - rating)
   const addReview = async (e) => {
-  e.preventDefault()
+  e.preventDefault();
 
   try {
     const response = await fetch(API_BASE_URL, {
-    headers: {
-  "Content-Type": "application/json",
-  Authorization: `Bearer ${token}`,
-},
-});
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        guestName,
+        hotelName,
+        rating: Number(rating),
+        review: reviewText,
+      }),
+    });
 
-    const result = await response.json()
+    const result = await response.json();
 
     if (!response.ok) {
-      alert(result.message || "Failed to add review")
-      return
+      alert(result.message || "Failed to add review");
+      return;
     }
 
-    setReviews([...reviews, result.data])
+    setReviews([...reviews, result.data]);
 
-    setGuestName("")
-    setHotelName("")
-    setRating(5)
-    setReviewText("")
+    setGuestName("");
+    setHotelName("");
+    setRating(5);
+    setReviewText("");
+    setSummary(""); // Clear AI summary after adding review
 
-    alert("Review Added Successfully!")
+    alert("Review Added Successfully!");
   } catch (err) {
-    console.error(err)
-    alert("Something went wrong")
+    console.error(err);
+    alert("Something went wrong");
   }
-}
+};
   const deleteReview = async (id) => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this review?"
@@ -149,6 +160,42 @@ function Dashboard() {
     alert("Something went wrong")
   }
 }
+const generateSummary = async () => {
+  if (!reviewText.trim()) {
+    alert("Please enter a review first.");
+    return;
+  }
+
+  try {
+    setAiLoading(true);
+    setAiError("");
+    setSummary("");
+
+    const response = await fetch("http://localhost:5000/api/ai/summarize", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        review: reviewText,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.message || "Failed to generate summary");
+    }
+
+    setSummary(result.summary);
+  } catch (err) {
+    console.error(err);
+    setAiError("Failed to generate AI summary.");
+  } finally {
+    setAiLoading(false);
+  }
+};
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
@@ -269,7 +316,46 @@ function Dashboard() {
     }}
   >
     Add Review
+    <button
+  type="button"
+  onClick={generateSummary}
+  style={{
+    marginLeft: "10px",
+    padding: "12px 20px",
+    background: "#6c63ff",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  }}
+>
+  Generate AI Summary
+</button>
   </button>
+  {aiLoading && (
+  <p style={{ color: "#6c63ff", marginTop: "15px" }}>
+    Generating summary...
+  </p>
+)}
+{aiError && (
+  <p style={{ color: "red", marginTop: "10px" }}>
+    {aiError}
+  </p>
+)}
+{summary && (
+  <div
+    style={{
+      marginTop: "20px",
+      padding: "15px",
+      background: "#f5f5ff",
+      borderRadius: "8px",
+      border: "1px solid #ddd",
+    }}
+  >
+    <h3>🤖 AI Summary</h3>
+    <p>{summary}</p>
+  </div>
+)}
 </form>
         {editingId && (
   <div
