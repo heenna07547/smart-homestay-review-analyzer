@@ -401,7 +401,31 @@ footer {
     height: 180px;
   }
 }
+/* Dark Theme */
+.dark .nav-links{
+    background:#111827;
+}
 
+/* Light Theme */
+.light .nav-links{
+    background:#ffffff;
+    border-left:1px solid #ddd;
+}
+
+.light .nav-links a{
+    color:#222;
+    background:#f5f5f5;
+    border:1px solid #ddd;
+}
+
+.light .nav-links a:hover{
+    background:#38bdf8;
+    color:#fff;
+}
+
+.light .logout-btn{
+    color:#fff;
+}
 /* Large Desktop */
 
 @media (min-width: 1440px) {
