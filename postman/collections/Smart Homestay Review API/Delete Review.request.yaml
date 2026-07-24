@@ -1,6 +1,6 @@
 $kind: http-request
 description: Deletes a review by its _id.
-url: http://localhost:5000/api/reviews/665f1a2b3c4d5e6f78901234
+url: https://smart-homestay-review-analyzer.onrender.com/api/reviews/665f1a2b3c4d5e6f78901234
 method: DELETE
 examples: ./.resources/Delete Review.resources/examples
 order: 5000

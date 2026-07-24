@@ -1,6 +1,6 @@
 $kind: http-request
 description: Returns a list of all reviews stored in the database.
-url: http://localhost:5000/api/reviews
+url: https://smart-homestay-review-analyzer.onrender.com/api/reviews
 method: GET
 examples: ./.resources/Get All Reviews.resources/examples
 order: 1000

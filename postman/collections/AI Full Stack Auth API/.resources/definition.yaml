@@ -1,4 +1,4 @@
 $kind: collection
 variables:
-  baseURL: http://localhost:5000
+  baseURL: https://smart-homestay-review-analyzer.onrender.com
   token: ""

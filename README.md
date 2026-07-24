@@ -169,7 +169,7 @@ MONGO_URI=mongodb://127.0.0.1:27017/smart_homestay
 npm run dev
 
 Backend runs at:
-http://localhost:5000
+https://smart-homestay-review-analyzer.onrender.com
 ---
 
 ## Project Status

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-const API_BASE_URL = 'http://localhost:5000/api/reviews'
+const API_BASE_URL = 'https://smart-homestay-review-analyzer.onrender.com/api/reviews'
 const token = localStorage.getItem("token");
 
 function Dashboard() {
@@ -171,7 +171,7 @@ const generateSummary = async () => {
     setAiError("");
     setSummary("");
 
-    const response = await fetch("http://localhost:5000/api/ai/summarize", {
+    const response = await fetch("https://smart-homestay-review-analyzer.onrender.com/api/ai/summarize", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

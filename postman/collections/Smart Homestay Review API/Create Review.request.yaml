@@ -1,6 +1,6 @@
 $kind: http-request
 description: Creates a new review.
-url: http://localhost:5000/api/reviews
+url: https://smart-homestay-review-analyzer.onrender.com/api/reviews
 method: POST
 headers:
   Content-Type: application/json
